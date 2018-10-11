@@ -28,6 +28,11 @@ var PORT = process.env.PORT || 3000;
 var Note = require('./models/Note.js');
 var Article = require('./models/Article.js');
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
 app.get('/scrape', function(req, res){
 	request('http://www.cnn.com/', function(error, response, html){
 		var $ = cheerio.load(html);
