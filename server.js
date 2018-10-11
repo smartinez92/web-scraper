@@ -23,7 +23,7 @@ db.on('error', function (err) {
 db.once('open', function () {
 	console.log('DB connection: ',whichDb);
 });
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 var Note = require('./models/Note.js');
 var Article = require('./models/Article.js');
